@@ -1,0 +1,335 @@
+body {
+    height: 100%;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Varela Round',sans-serif;
+}
+
+.contenitore {
+    position: relative;
+}
+
+/* ---------------HEADER--------------- */
+
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ---------------NAVBAR--------------- */
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(42, 7, 99, 0.281));
+}
+
+.navbar img {
+    max-width: 300px;
+    max-height: 50px;
+    padding-top: 10px;
+}
+
+.navbar .navbarElements {
+    margin: auto;
+    
+}
+
+.navbar .navbarElements ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    color: white;
+    gap: 100px;
+}
+
+.navbar ul li {
+    
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.navbar ul li:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+/* ---------------FAKE TRAILER--------------- */
+
+.fakeTrailer {
+    position: relative;
+    text-align: left;
+    color: white;
+}
+
+.fakeTrailer img {
+    position: relative;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    max-height: 600px;
+}
+
+.fakeTrailer .top-left {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    margin: 20px 5px 20px;
+    width: 100%;
+}
+
+.fakeTrailer .top-left h1 {
+    display: inline;
+    font-size: 100px;
+    margin: 5px;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.397);
+}
+
+.fakeTrailer .top-left h3 {
+    display: inline;
+    font-size: 40px;
+    margin: 5px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.397);
+}
+
+.fakeTrailer .top-left p {
+    display: inline;
+    font-size: 20px;
+    width: 30%;
+    margin: 20px 5px;
+    text-shadow: 2px 1px rgba(0, 0, 0, 0.397);
+    line-height: 30px;
+}
+
+.fakeTrailer .bottom-left {
+    position: absolute;
+    bottom: 40px;
+    left: 25px;
+}
+
+.fakeTrailer .bottom-left button {
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border-style: none;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+.fakeTrailer .bottom-left button:hover {
+    cursor: pointer;
+    box-shadow: 2px 4px rgba(0, 0, 0, 0.342);
+    opacity: 0.8;
+}
+
+/* -----------------CARDS----------------*/
+
+.carouselContainer {
+    padding: 0;
+    margin-top: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.carouselContainer .carouselTopTen h4 {
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 35px;
+
+}
+
+.carouselContainer .carouselCard {
+    width: 300px;
+    height: fit-content;
+    margin: 10px 40px;
+}
+
+.carouselContainer .carouselCard img {
+    display: block;
+    cursor: pointer;
+    transition: 0.3s ease;
+    height: auto;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.carouselContainer .carouselCard img:hover {
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+
+/* ---------------FOOTER--------------- */
+
+footer {
+    margin-bottom: 0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 90px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(42, 7, 99, 0.281));
+}
+
+footer a {
+    align-items: center;
+    margin: 0 auto;
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    align-items: center;
+    margin: 0 auto;
+    color: white;
+}
+
+/* ---------------RESPONSIVE SMARTPHONES--------------- */
+
+@media (max-width: 500px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .navbar a {
+        text-align: center;
+    }
+    .navbar .navbarElements ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+    }
+
+    .navbar ul li {
+        margin-bottom: 25px;
+    }
+    .navbar img {
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .fakeTrailer {
+        display: none;
+    }
+    
+    .carouselContainer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carouselContainer .carouselTopTen h4 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .carouselContainer .carouselCard img {
+        margin: auto;
+        padding: 0;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+/* ---------------RESPONSIVE TABLETS--------------- */
+
+@media (min-width: 550px) and (max-width: 1024px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .navbar a {
+        text-align: center;
+    }
+    
+    .navbar .navbarElements ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:0;
+    }
+    
+    .navbar ul li {
+        margin-bottom: 25px;
+    }
+    
+    .navbar img {
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .fakeTrailer {
+        display: none;
+    }
+
+    .carouselContainer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .carouselContainer .carouselTopTen h4 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+    
+    .carouselContainer .carouselCard {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .carouselContainer .carouselCard img {
+        margin: auto;
+        padding: 0;
+    }
+    
+    footer {
+        font-size: 12px;
+    }
+}
