@@ -1,23 +1,21 @@
-const c = document.createElement;
 
-const createCard = (title, desc, imgUrl, id) => {
-    const divElement = c("div");
-    const h4Element = c("h4");
-    const imgElement = c("img");
-    const descElement = c("p");
-    const idElement = c("p");
 
+const createCard = (title, desc, imgUrl, id, index) => {
+    const divElement = document.createElement("div");
+    const h4Element = document.createElement("h4");
+    const imgElement = document.createElement("img");
+    const descElement = document.createElement("p");
+
+    divElement.id = id;
     divElement.classList.add("carouselCard");
     descElement.classList.add("tvSerieDesc");
     h4Element.classList.add("tvSerieTitle");
     imgElement.setAttribute("src", "https://image.tmdb.org/t/p/w300/" + imgUrl);
     imgElement.setAttribute("alt", "immagine");
-    idElement.setAttribute("id", id);
-    h4Element.textContent = title;
+    h4Element.textContent = "#"  + index + " " + title;
     descElement.textContent = desc;
-    idElement.textContent = "";
 
-    divElement.append(h4Element, imgElement, descElement, idElement);
+    divElement.append(h4Element, imgElement, descElement);
     document.querySelector(".carouselContainer").appendChild(divElement);
 };
 
@@ -37,12 +35,14 @@ async function getTVSeriesData() {
 
 getTVSeriesData()
     .then((resultAPI) => {
-        resultAPI.results.map((tvSerie) => 
+        let index = 1;
+        resultAPI.results.forEach((tvSerie) => 
         createCard(
             tvSerie.name,
             tvSerie.overview,
             tvSerie.backdrop_path,
             tvSerie.id,
+            index++
         ));
     })
     .then(() => {
@@ -52,6 +52,10 @@ getTVSeriesData()
             const imgElement = card.querySelector("img");
             const title = card.querySelector("h4");
             const desc = card.querySelector(".tvSerieDesc");
-            const idElement = card.querySelector("p"); 
+            const id = card.id;
+
+            card.addEventListener("click", () => {
+                window.location = '/tvSeries.html?id=' + id;
+            });
         });
     });
