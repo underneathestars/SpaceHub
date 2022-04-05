@@ -110,7 +110,7 @@ header {
 .fakeTrailer .top-left p {
     display: inline;
     font-size: 20px;
-    width: 20vw;
+    width: 100%;
     margin: 20px 10px;
     text-shadow: 2px 1px rgba(0, 0, 0, 0.550);
     line-height: 30px;

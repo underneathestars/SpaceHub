@@ -44,4 +44,3 @@ getTVSeriesData()
             tvSerie.poster_path
         );
     });
-;
