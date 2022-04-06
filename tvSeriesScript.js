@@ -3,8 +3,8 @@ var id = 0;
 
 if (params.has("id")) {
     id = params.get("id");
-} else {
-    window.location = "/index.html";
+// } else {
+//     window.location = "/index.html";
 }
 
 
