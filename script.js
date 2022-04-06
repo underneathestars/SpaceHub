@@ -2,13 +2,16 @@ const createFakeTrailer = (card) => {
 	const titoloTrailer = document.querySelector("#titoloTrailer");
     const posizioneTrailer = document.querySelector("#posizioneTrailer");
    	const descTrailer = document.querySelector("#descTrailer");
+    const imgTrailer = document.querySelector("#imgTrailer");
 
     const titoloCard = card.querySelector(".tvSerieTitle");
     const descCard = card.querySelector(".tvSerieDesc");
+    const imgCard = card.querySelector("img");
 
 	titoloTrailer.textContent = titoloCard.textContent.substring(titoloCard.textContent.indexOf(' ') + 1);
     posizioneTrailer.textContent = titoloCard.textContent.substring(0, titoloCard.textContent.indexOf(' ')) + " in Serie TV oggi";
     descTrailer.textContent = descCard.textContent;
+    imgTrailer.src = imgCard.src;
 };
 
 
@@ -23,7 +26,7 @@ const createCard = (title, desc, imgUrl, id, index) => {
     divElement.classList.add("carouselCard");
     descElement.classList.add("tvSerieDesc");
     h4Element.classList.add("tvSerieTitle");
-    imgElement.setAttribute("src", "https://image.tmdb.org/t/p/w300/" + imgUrl);
+    imgElement.setAttribute("src", "https://image.tmdb.org/t/p/w1280/" + imgUrl);
     imgElement.setAttribute("alt", "immagine");
     h4Element.textContent = "#"  + index + " " + title;
     descElement.textContent = desc;

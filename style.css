@@ -64,17 +64,19 @@ header {
 
 .fakeTrailer {
     width: 100%;
-    height: 600px;
+    height: 700px;
     position: relative;
     text-align: left;
     color: white;
-    background-image: url('https://picsum.photos/1990/600');
+    z-index: -1;
+}
+
+.fakeTrailer img {
+    width: 100%;
 }
 
 
 .fakeTrailer .top-left {
-    border-radius: 5px;
-    background-color: rgba(77, 77, 77, 0.212);
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -83,7 +85,8 @@ header {
     margin: 5px 20px;
     width: 30%;
     height: 90%;
-    
+    z-index: 2;
+    justify-content: center;
 }
 
 .fakeTrailer .top-left h1 {
@@ -137,6 +140,7 @@ header {
 /* -----------------CARDS----------------*/
 
 .carouselContainer {
+    z-index: 1;
     justify-content: center;
     align-items: center;
     background-color: black;
@@ -317,6 +321,7 @@ footer p {
 /* ---------------RESPONSIVE SMARTPHONES--------------- */
 
 @media (max-width: 500px) {
+
     .contenitore {
         width: 100%;
         
@@ -325,7 +330,9 @@ footer p {
         height: auto;
         flex-direction: column;
         justify-content: center;
-    }
+        margin: 0 auto;
+        padding: 0;
+    }   
 
     .navbar a {
         text-align: center;
@@ -350,11 +357,11 @@ footer p {
     .fakeTrailer {
         display: flex;
         justify-content: center;
-        width: 150%;
+        width: 100%;
         height: 300px;
         position: relative;
         align-items: center;
-        margin: auto;
+        margin: 10px auto;
         text-align: center;
         flex-direction: column;
     }
@@ -367,11 +374,12 @@ footer p {
         margin: 0 auto;
         text-align: center;
         align-items: center;
+        background-color: transparent;
     }
 
     .fakeTrailer .top-left h1 {
         font-size: 50px;
-        margin: auto;
+        margin: 0 auto;
     }
 
     .fakeTrailer .top-left h3 {
@@ -406,6 +414,11 @@ footer p {
         padding: 0;
         align-items: center;
     }
+
+    .carouselContainer .carouselCard img:touch-action {
+        opacity: 0.5;
+        transform: scale(1.1);
+    };
 
     footer {
         font-size: 12px;
@@ -589,8 +602,6 @@ footer p {
     }
     
     .fakeTrailer .top-left {
-        border-radius: 5px;
-        background-color: rgba(77, 77, 77, 0.212);
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -622,8 +633,6 @@ footer p {
         margin: 20px 10px;
         text-shadow: 2px 1px rgba(0, 0, 0, 0.550);
         line-height: 20px;
-        overflow-block: 0;
-    
     }
 
     .fakeTrailer .top-left button {
