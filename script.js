@@ -55,7 +55,7 @@ getTVSeriesData()
             const id = card.id;
 
             card.addEventListener("click", () => {
-                window.location = "/SpaceHub" + "/tvSeries.html?id" + id;
+                window.location = "/SpaceHub" + "/tvSeries.html?id=" + id;
             });
         });
     });
