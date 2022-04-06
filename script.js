@@ -1,3 +1,16 @@
+const createFakeTrailer = (card) => {
+	const titoloTrailer = document.querySelector("#titoloTrailer");
+    const posizioneTrailer = document.querySelector("#posizioneTrailer");
+   	const descTrailer = document.querySelector("#descTrailer");
+
+    const titoloCard = card.querySelector(".tvSerieTitle");
+    const descCard = card.querySelector(".tvSerieDesc");
+
+	titoloTrailer.textContent = titoloCard.textContent.substring(titoloCard.textContent.indexOf(' ') + 1);
+    posizioneTrailer.textContent = titoloCard.textContent.substring(0, titoloCard.textContent.indexOf(' ')) + " in Serie TV oggi";
+    descTrailer.textContent = descCard.textContent;
+};
+
 
 
 const createCard = (title, desc, imgUrl, id, index) => {
@@ -46,16 +59,20 @@ getTVSeriesData()
         ));
     })
     .then(() => {
+
+        
         const cardsEl = document.querySelectorAll(".carouselCard");
+        createFakeTrailer(cardsEl[0]);
 
         cardsEl.forEach((card) => {
-            const imgElement = card.querySelector("img");
-            const title = card.querySelector("h4");
-            const desc = card.querySelector(".tvSerieDesc");
             const id = card.id;
 
             card.addEventListener("click", () => {
                 window.location = "/SpaceHub/tvSeries.html?id=" + id;
             });
+
+            card.addEventListener("mouseover", () => {
+                createFakeTrailer(card);
+            });
         });
-    });
+    })
